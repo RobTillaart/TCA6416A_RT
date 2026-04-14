@@ -1,12 +1,12 @@
 
-[![Arduino CI](https://github.com/RobTillaart/TCA6408A_RT/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
-[![Arduino-lint](https://github.com/RobTillaart/TCA6408A_RT/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/TCA6408A_RT/actions/workflows/arduino-lint.yml)
-[![JSON check](https://github.com/RobTillaart/TCA6408A_RT/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/TCA6408A_RT/actions/workflows/jsoncheck.yml)
-[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/TCA6408A_RT.svg)](https://github.com/RobTillaart/TCA6408A_RT/issues)
+[![Arduino CI](https://github.com/RobTillaart/TCA6416A_RT/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino-lint](https://github.com/RobTillaart/TCA6416A_RT/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/TCA6416A_RT/actions/workflows/arduino-lint.yml)
+[![JSON check](https://github.com/RobTillaart/TCA6416A_RT/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/TCA6416A_RT/actions/workflows/jsoncheck.yml)
+[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/TCA6416A_RT.svg)](https://github.com/RobTillaart/TCA6416A_RT/issues)
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/TCA6408A_RT/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/RobTillaart/TCA6408A_RT.svg?maxAge=3600)](https://github.com/RobTillaart/TCA6408A_RT/releases)
-[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/TCA6416A.svg)](https://registry.platformio.org/libraries/RobTillaart/TCA6408A_RT)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/TCA6416A_RT/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/RobTillaart/TCA6416A_RT.svg?maxAge=3600)](https://github.com/RobTillaart/TCA6416A_RT/releases)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/TCA6416A.svg)](https://registry.platformio.org/libraries/RobTillaart/TCA6416A_RT)
 
 
 # TCA6416A
@@ -80,9 +80,9 @@ The current version of the library does not support a reset() function yet.
 
 ### Related
 
-- https://github.com/RobTillaart/TCA6408A_RT - 8 bits I2C IO expander
-- https://github.com/RobTillaart/TCA6408A_RT - 16 bits I2C IO expander
-- https://github.com/RobTillaart/TCA6424A - 24 bits I2C IO expander
+- https://github.com/RobTillaart/TCA6416A_RT - 8 bits I2C IO expander
+- https://github.com/RobTillaart/TCA6416A_RT - 16 bits I2C IO expander
+- https://github.com/RobTillaart/TCA6424A_RT - 24 bits I2C IO expander
 - https://github.com/RobTillaart/PCF8574 - 8 bits I2C IO expander
 - https://github.com/RobTillaart/PCF8575 - 16 bits I2C IO expander
 
