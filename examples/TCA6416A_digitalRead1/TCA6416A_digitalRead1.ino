@@ -48,7 +48,7 @@ void loop(void)
   Serial.print("INPUT: ");
   for (int pin = 16; pin > -1; pin--)
   {
-    Serial.print(tca.digitalRead1(pin) ? : 1 : 0);
+    Serial.print(tca.digitalRead1(pin) ? 1 : 0);
   }
   Serial.println();
 

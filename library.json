@@ -1,7 +1,7 @@
 {
   "name": "TCA6416A",
   "keywords": "",
-  "description": "Arduino library for TCA6416A I2C 8 bits IO expander.",
+  "description": "Arduino library for TCA6416A I2C 16 bits IO expander.",
   "authors":
   [
     {
