@@ -5,7 +5,7 @@
 //    DATE: 2026-04-13
 // VERSION: 0.1.0
 // PURPOSE: Arduino library for TCA6416A I2C 16 bits IO expander.
-//     URL: https://github.com/RobTillaart/TCA6416A
+//     URL: https://github.com/RobTillaart/TCA6416A_RT
 //
 
 
