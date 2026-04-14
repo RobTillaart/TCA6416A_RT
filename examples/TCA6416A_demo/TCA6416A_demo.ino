@@ -29,18 +29,15 @@ void setup()
     while (1);
   }
 
-  //  Set P0–P3 as inputs, P4–P7 as outputs
-  //  0x0F 00001111
-  tca.setPinMode8(0x0F);
+  //  Set P0–P7 as inputs, P8–P15 as outputs
+  tca.setPinMode16(0x00FF);
 
   //  Invert INPUT polarity so pressing button == 1
-  //  0x0F 00001111
-  tca.setPolarity8(0x0F);
+  tca.setPolarity16(0x00FF);
 
 
   //  Initialize outputs to OFF
-  //  0x0F 00001111
-  tca.digitalWrite8(0x0F);
+  tca.digitalWrite16(0x00FF);
 
   Serial.print(millis());
   Serial.println(": config done..");
@@ -49,22 +46,22 @@ void setup()
 
 void loop(void)
 {
-  uint8_t data = tca.digitalRead8();
+  uint16_t data = tca.digitalRead16();
 
-  tca.digitalWrite8(0xFF);
+  tca.digitalWrite16(0xFFFF);
   delay(500);
 
-  tca.digitalWrite8(0x00);
+  tca.digitalWrite16(0x0000);
   delay(500);
 
-  tca.digitalWrite8(data << 4);
+  tca.digitalWrite16(data << 8);
   delay(500);
 
   //  Print input/output states
-  Serial.print(" Inputs (P0–P3): ");
-  for (uint8_t mask = 0x01; mask < 0x10; mask <<= 1)
+  Serial.print(" Inputs (P0–P7): ");
+  for (uint16_t mask = 0x0001; mask < 0x0100; mask <<= 1)
   {
-    Serial.print(data & mask);
+    Serial.print((data & mask) ? 1 : 0);
   }
   Serial.println();
 
