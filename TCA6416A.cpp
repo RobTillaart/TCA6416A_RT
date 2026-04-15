@@ -121,7 +121,7 @@ void TCA6416A::setPolarity1(uint8_t pin, uint8_t value)
 
 uint8_t TCA6416A::getPolarity1(uint8_t pin)
 {
-  uint16_t data = readRegister(TCA6416A_REG_CONFIG);
+  uint16_t data = readRegister(TCA6416A_REG_POLARITY);
   return (data & (1<< pin)) > 0;
 }
 
