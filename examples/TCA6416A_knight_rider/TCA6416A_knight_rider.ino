@@ -11,7 +11,7 @@
 
 TCA6416A tca(0x20);
 
-int pin = 0;
+int pin = 1;
 int direction = 1;
 uint32_t lastTime = 0;
 
@@ -55,6 +55,7 @@ void loop(void)
     //  adjust active led
     tca.digitalWrite1(pin, 1);
     tca.digitalWrite1(prevPin, 0);
+    Serial.println(pin);
   }
 
   //  other tasks
