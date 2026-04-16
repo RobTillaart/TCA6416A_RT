@@ -18,15 +18,12 @@ Arduino library for TCA6416A I2C 16 bits IO expander.
 
 **Experimental**
 
-This file is based upon a copy of the TCA6408A library so it may contain
-a few copy/paste artefacts. 
-
-This library is to use TCA6416A I2C 16 bit IO expander. 
+This library is to use the TCA6416A I2C 16 bit IO expander. 
 This device supports a voltage range of 1.65 .. 5.5 Volt.
 It allows bidirectional voltage-level translation and gpio expansion 
 between 1.8-V, 2.5-V, 3.3-V, and 5-V I2C bus and P-ports.
 
-Every io pin can be configured as input or output, with optional
+Every IO pin can be configured as INPUT or OUTPUT, with optional
 polarity inversion.
 
 The TCA6416A has a active LOW RESET pin to reset the device,
@@ -34,7 +31,6 @@ see reset section below.
 
 The TCA6416A supports an active LOW interrupt on changing INPUT pins, 
 see interrupt section below.
-
 
 As always, feedback is welcome.
 
@@ -94,7 +90,6 @@ datasheet
 
 TODO: Test on Arduino UNO and ESP32
 
-
 ## I2C
 
 ### I2C Address
@@ -145,39 +140,36 @@ TODO: create and run performance sketch on hardware.
 ### Constructor
 
 - **TCA6416A(uint8_t address, TwoWire \*wire = &Wire)** optional select I2C bus.
-- **bool begin()** checks if device is visible on the I2C bus.
-- **bool isConnected()** Checks if device address can be found on I2C bus.
+- **bool begin()** checks if the device is visible on the I2C bus.
+- **bool isConnected()** Checks if the device address can be found on the I2C bus.
 - **uint8_t getAddress()** Returns the address configured in constructor (convenience).
 
 ### PinMode
 
-mask = 0x0000..0xFFFF 
-pin = 0..15  
+mask = 0x0000..0xFFFF, pin = 0..15  
 
 - **void setPinMode16(uint16_t mask)** per bit 1 = INPUT 0 = OUTPUT.
-- **uint16_t getPinMode16()** returns set mask.
-- **void setPinMode1(uint8_t pin, uint8_t value)** set pin to INPUT / OUTPUT.
-- **uint8_t getPinMode1(uint8_t pin)** returns pinMode of pin.
+- **uint16_t getPinMode16()** returns the set mask.
+- **void setPinMode1(uint8_t pin, uint8_t value)** set the pin to INPUT / OUTPUT.
+- **uint8_t getPinMode1(uint8_t pin)** returns the pinMode of the pin.
 
 ### Polarity
 
-mask = 0x0000..0xFFFF 
-pin = 0..15  
+mask = 0x0000..0xFFFF, pin = 0..15  
 
 - **void setPolarity16(uint16_t mask)** per bit 1 = inverted, 0 = normal.
-- **uint16_t getPolarity16()** returns set mask.
-- **void setPolarity1(uint8_t pin, uint8_t value)** set pin to 1 = inverted, 0 = normal.
-- **uint8_t getPolarity1(uint8_t pin)** returns polarity of pin.
+- **uint16_t getPolarity16()** returns the set mask.
+- **void setPolarity1(uint8_t pin, uint8_t value)** set the pin to 1 = inverted, 0 = normal.
+- **uint8_t getPolarity1(uint8_t pin)** returns the polarity of the pin.
 
 ### Core IO
 
-mask = 0x0000..0xFFFF 
-pin = 0..15
+mask = 0x0000..0xFFFF, pin = 0..15
 
-- **void digitalWrite16(uint16_t mask)** write all pins at once.
-- **uint16_t digitalRead16()** read all pins at once.
-- **void digitalWrite1(uint8_t pin, uint8_t value)** set pin to HIGH / LOW
-- **uint8_t digitalRead1(uint8_t pin)** returns value of pin.
+- **void digitalWrite16(uint16_t mask)** write all the pins at once.
+- **uint16_t digitalRead16()** read all the pins at once.
+- **void digitalWrite1(uint8_t pin, uint8_t value)** set the pin to HIGH or LOW.
+- **uint8_t digitalRead1(uint8_t pin)** returns the value of the pin.
 
 ### Debug
 
