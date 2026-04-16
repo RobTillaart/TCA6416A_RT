@@ -10,17 +10,18 @@
 
 #include "TCA6416A.h"
 
-constexpr uint8_t TCA6416A_REG_INPUT    = 0x00;
-constexpr uint8_t TCA6416A_REG_OUTPUT   = 0x02;
-constexpr uint8_t TCA6416A_REG_POLARITY = 0x04;
-constexpr uint8_t TCA6416A_REG_CONFIG   = 0x06;
+constexpr uint8_t TCA6416A_REG_INPUT    = 0x00;  //  R
+constexpr uint8_t TCA6416A_REG_OUTPUT   = 0x02;  //  RW
+constexpr uint8_t TCA6416A_REG_POLARITY = 0x04;  //  RW
+constexpr uint8_t TCA6416A_REG_CONFIG   = 0x06;  //  RW
 
 
 TCA6416A::TCA6416A(uint8_t address, TwoWire *wire)
 {
   _address = address;
-  _wire = wire;
-  _error = TCA6416A_OK;
+  _wire    = wire;
+  _error   = TCA6416A_OK;
+  _IOMask  = 0xFFFF;
 }
 
 bool TCA6416A::begin()
@@ -137,12 +138,6 @@ void TCA6416A::digitalWrite16(uint16_t mask)
   return;
 }
 
-uint16_t TCA6416A::digitalRead16()
-{
-  uint16_t mask = readRegister(TCA6416A_REG_INPUT) & _IOMask;
-  return mask;
-}
-
 void TCA6416A::digitalWrite1(uint8_t pin, uint8_t value)
 {
   uint16_t data = readRegister(TCA6416A_REG_OUTPUT);
@@ -155,6 +150,12 @@ void TCA6416A::digitalWrite1(uint8_t pin, uint8_t value)
     //  TODO error propagation
   }
   return;
+}
+
+uint16_t TCA6416A::digitalRead16()
+{
+  uint16_t mask = readRegister(TCA6416A_REG_INPUT) & _IOMask;
+  return mask;
 }
 
 uint8_t TCA6416A::digitalRead1(uint8_t pin)
@@ -202,7 +203,7 @@ uint16_t TCA6416A::readRegister(uint8_t reg)
   if (n != 0)
   {
     _error = n;
-    return 0;
+    return 0xFFFF;
   }
   if (2 != _wire->requestFrom(_address, (uint8_t)2))
   {

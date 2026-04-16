@@ -54,7 +54,6 @@ public:
 
 
 private:
-  //  TODO clean up...
   uint8_t  _address = 0;
   TwoWire* _wire = NULL;
 

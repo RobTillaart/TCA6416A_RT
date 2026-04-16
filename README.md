@@ -80,7 +80,7 @@ The current version of the library does not support a reset() function yet.
 
 ### Related
 
-- https://github.com/RobTillaart/TCA6416A_RT - 8 bits I2C IO expander
+- https://github.com/RobTillaart/TCA6408A_RT - 8 bits I2C IO expander
 - https://github.com/RobTillaart/TCA6416A_RT - 16 bits I2C IO expander
 - https://github.com/RobTillaart/TCA6424A_RT - 24 bits I2C IO expander
 - https://github.com/RobTillaart/PCF8574 - 8 bits I2C IO expander
@@ -189,11 +189,26 @@ pin = 0..16
 #### Must
 
 - improve documentation
-- keep in sync with TCA6408A (see there).
+- keep in sync with TCA6408A_RT.
 
 #### Should
 
+- investigate optimization 
+  - multi-read without setting register again
+  - cache register values (not in 0.1.x)
+- implement RESET support
+  - reset pin configuration (begin?)
+  - reset pin example
+- add examples 
+  - interrupt example, no handling in library itself
+- improve error handling
+  - range checking parameters
+  - pass parameter by reference and return error flag.
+
 #### Could
+
+- add examples
+- add unit tests ?
 
 #### Wont
 
