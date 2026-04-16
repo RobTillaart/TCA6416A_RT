@@ -152,7 +152,7 @@ TODO: create and run performance sketch on hardware.
 ### PinMode
 
 mask = 0x0000..0xFFFF 
-pin = 0..16  
+pin = 0..15  
 
 - **void setPinMode16(uint16_t mask)** per bit 1 = INPUT 0 = OUTPUT.
 - **uint16_t getPinMode16()** returns set mask.
@@ -162,7 +162,7 @@ pin = 0..16
 ### Polarity
 
 mask = 0x0000..0xFFFF 
-pin = 0..16  
+pin = 0..15  
 
 - **void setPolarity16(uint16_t mask)** per bit 1 = inverted, 0 = normal.
 - **uint16_t getPolarity16()** returns set mask.
@@ -172,7 +172,7 @@ pin = 0..16
 ### Core IO
 
 mask = 0x0000..0xFFFF 
-pin = 0..16
+pin = 0..15
 
 - **void digitalWrite16(uint16_t mask)** write all pins at once.
 - **uint16_t digitalRead16()** read all pins at once.
