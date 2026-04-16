@@ -40,31 +40,19 @@ void setup()
   tca.digitalWrite16(0x00FF);
 
   Serial.print(millis());
-  Serial.println(": config done..");
+  Serial.println(": configuration done..");
 }
 
 
 void loop(void)
 {
-  tca.digitalWrite8(0x0080);
-  delay(500);
-  tca.digitalWrite8(0x0000);
-  delay(500);
-
-  tca.digitalWrite8(0x0040);
-  delay(500);
-  tca.digitalWrite8(0x0000);
-  delay(500);
-
-  tca.digitalWrite8(0x0020);
-  delay(500);
-  tca.digitalWrite8(0x0000);
-  delay(500);
-
-  tca.digitalWrite8(0x0010);
-  delay(500);
-  tca.digitalWrite8(0x0000);
-  delay(500);
+  for (uint16_t mask = 0x8000; mask > 0x0080; mask >>= 1)
+  {
+    tca.digitalWrite16(mask);
+    delay(500);
+    tca.digitalWrite16(0x0000);
+    delay(500);
+  }
 }
 
 
