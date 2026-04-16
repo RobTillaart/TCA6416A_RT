@@ -4,7 +4,7 @@
 // PURPOSE: test basic behaviour and performance
 //     URL: https://github.com/RobTillaart/TCA6416A_RT
 //
-//  connect 8 LEDs to the 8 pins with appropriate resistors.
+//  connect 16 LEDs to the 16 pins with appropriate resistors.
 
 #include "TCA6416A.h"
 
