@@ -10,7 +10,7 @@
 
 TCA6416A tca(0x20);
 
-uint8_t value, previous;
+uint16_t value, previous;
 
 
 void setup()
